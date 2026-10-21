@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-slate-50: #f8fafc;
+  --color-slate-500: #64748b;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+  --color-sky-700: #0369a1;
+  --color-emerald-500: #10b981;
+  --font-sans: "Inter", "Segoe UI", Arial, sans-serif;
+  --font-display: "Manrope", "Inter", "Segoe UI", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply m-0 min-w-80 bg-white font-sans text-slate-800 antialiased;
+  }
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    @apply outline-offset-4 focus-visible:outline-2 focus-visible:outline-sky-600;
+  }
+  button:not(:disabled),
+  select,
+  summary {
+    @apply cursor-pointer;
+  }
+  button:disabled {
+    @apply cursor-not-allowed;
+  }
+  ::selection {
+    @apply bg-sky-100 text-slate-900;
+  }
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+  .btn-primary {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-sky-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-800 disabled:bg-slate-200 disabled:text-slate-500;
+  }
+  .btn-secondary {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-sky-300 hover:bg-sky-50;
+  }
+  .field {
+    @apply w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm placeholder:text-slate-400 focus:border-sky-500;
+  }
+  .eyebrow {
+    @apply text-[11px] font-bold uppercase tracking-[0.18em] text-sky-700;
+  }
+}
